@@ -58,8 +58,8 @@
   width: 100%;
   padding: 0.75rem 0.85rem;
   border-radius: 0.75rem;
-  border: 1px solid rgba(148, 163, 184, 0.45);
-  background: rgba(248, 250, 252, 0.9);
+  border: 1px solid #94a3b873;
+  background: #f8fafce6;
   color: #0f172a;
   font-size: 0.95rem;
   transition:
@@ -69,8 +69,8 @@
 
 .demo-input:focus-visible {
   outline: none;
-  border-color: rgba(99, 102, 241, 0.65);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px #6366f126;
 }
 
 .demo-button {
@@ -85,17 +85,17 @@
   transition:
     transform 160ms ease,
     box-shadow 160ms ease;
-  box-shadow: 0 8px 18px rgba(79, 70, 229, 0.16);
+  box-shadow: 0 8px 18px #4f46e516;
 }
 
 .demo-button:focus-visible {
-  outline: 3px solid rgba(79, 70, 229, 0.4);
+  outline: 3px solid #4f46e540;
   outline-offset: 2px;
 }
 
 .demo-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(59, 130, 246, 0.25);
+  box-shadow: 0 10px 24px #3b82f625;
 }
 
 .api h3,
@@ -131,12 +131,12 @@
   padding: 0.85rem 1rem;
   border-radius: 0.75rem;
   background: #f8fafc;
-  box-shadow: 0 1px 0 rgba(148, 163, 184, 0.25);
+  box-shadow: 0 1px 0 #94a3b833;
   color: #334155;
 }
 
 .api-row code {
-  background: rgba(15, 23, 42, 0.05);
+  background: #0f172a0d;
   padding: 0.15rem 0.35rem;
   border-radius: 0.35rem;
   font-size: 0.85rem;

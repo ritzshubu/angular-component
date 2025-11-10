@@ -1,16 +1,3 @@
-# Component Docs
-
-An Angular 20 playground that showcases small, reusable UI components. The first release focuses on a responsive tooltip with configurable inputs and a documentation-style layout.
-
-## Getting Started
-
-```bash
-npm install
-npm start
-```
-
-Then open `http://localhost:4200/` to explore the component gallery. The app reloads automatically when you edit source files.
-
 ## Available Components
 
 ### Tooltip

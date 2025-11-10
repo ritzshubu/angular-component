@@ -27,9 +27,9 @@
   z-index: 20;
   padding: 0.55rem 0.95rem;
   border-radius: 0.75rem;
-  background: rgba(28, 28, 28, 0.92);
+  background: #1c1c1ceb;
   color: #ffffff;
-  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.18);
+  box-shadow: 0 12px 36px #0f172a2e;
   font-size: 0.9rem;
   line-height: 1.4;
   text-align: center;
@@ -71,7 +71,7 @@
   top: 100%;
   left: 50%;
   border-width: 0.4rem 0.4rem 0 0.4rem;
-  border-color: rgba(28, 28, 28, 0.92) transparent transparent transparent;
+  border-color: #1c1c1ceb transparent transparent transparent;
   transform: translateX(-50%);
 }
 
@@ -89,7 +89,7 @@
   left: -0.4rem;
   top: 50%;
   border-width: 0.4rem 0.4rem 0.4rem 0;
-  border-color: transparent rgba(28, 28, 28, 0.92) transparent transparent;
+  border-color: transparent #1c1c1ceb transparent transparent;
   transform: translateY(-50%);
 }
 
@@ -107,7 +107,7 @@
   bottom: 100%;
   left: 50%;
   border-width: 0 0.4rem 0.4rem 0.4rem;
-  border-color: transparent transparent rgba(28, 28, 28, 0.92) transparent;
+  border-color: transparent transparent #1c1c1ceb transparent;
   transform: translateX(-50%);
 }
 
@@ -125,7 +125,7 @@
   right: -0.4rem;
   top: 50%;
   border-width: 0.4rem 0 0.4rem 0.4rem;
-  border-color: transparent transparent transparent rgba(28, 28, 28, 0.92);
+  border-color: transparent transparent transparent #1c1c1ceb;
   transform: translateY(-50%);
 }
 

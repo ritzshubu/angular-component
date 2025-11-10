@@ -18,12 +18,12 @@
   gap: 0.25rem;
   padding: 8px 12px;
   border-radius: 4px;
-  border: 1px solid var(--border-tertiary, #cccfD7);
-  background: var(--container-secondary, #fff);
+  border: 1px solid #cccfD7;
+  background: #fff;
   color: #1b1b6f;
   font-size: 0.95rem;
-  font-weight: 600;
-  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.05), 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 4px 5px 0 rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+  box-shadow: 0 0 3px 0 #0000000d, 0 1px 3px 0 #0000000d, 0 4px 5px 0 #0000000d;
   transition:
     border-color 0.18s ease,
     box-shadow 0.18s ease,
@@ -38,9 +38,9 @@
 .filter-trigger.open {
   border-color: #1b1b6f;
   box-shadow:
-    0 0 3px 0 rgba(0, 0, 0, 0.05),
-    0 1px 3px 0 rgba(0, 0, 0, 0.05),
-    0 4px 5px 0 rgba(0, 0, 0, 0.05);
+    0 0 3px 0 #0000000d,
+    0 1px 3px 0 #0000000d,
+    0 4px 5px 0 #0000000d;
 }
 
 .trigger-label {
@@ -50,7 +50,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   color: #17171c;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .trigger-label.placeholder {
@@ -75,13 +75,13 @@
   inset: calc(100% + 0.55rem) auto auto 0;
   width: max(240px, min(100%, 360px));
   z-index: 50;
-  background: var(--container-secondary, #fff);
+  background: #fff;
   border-radius: 4px;
-  border: 1px solid var(--border-tertiary, #cccfD7);
+  border: 1px solid #cccfD7;
   box-shadow:
-    0 0 3px 0 rgba(0, 0, 0, 0.05),
-    0 1px 3px 0 rgba(0, 0, 0, 0.05),
-    0 4px 5px 0 rgba(0, 0, 0, 0.05);
+    0 0 3px 0 #0000000d,
+    0 1px 3px 0 #0000000d,
+    0 4px 5px 0 #0000000d;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -89,7 +89,7 @@
 
 .dropdown-header {
   padding: 8px 12px;
-  border-bottom: 1px solid rgba(204, 207, 215, 0.6);
+  border-bottom: 1px solid #cccfd799;
 }
 
 .dropdown-options {
@@ -106,7 +106,7 @@
 }
 
 .dropdown-options::-webkit-scrollbar-thumb {
-  background: rgba(204, 207, 215, 0.8);
+  background: #cccfd7cc;
   border-radius: 999px;
 }
 
@@ -142,13 +142,13 @@
 .checkbox-label {
   font-size: 0.95rem;
   color: #17171c;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .option-count {
   font-size: 0.85rem;
   color: #1b1b6f;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .empty-state {
@@ -161,7 +161,7 @@
 .dropdown-footer {
   margin-top: 0.5rem;
   padding: 8px 12px;
-  border-top: 1px solid rgba(204, 207, 215, 0.6);
+  border-top: 1px solid #cccfd799;
   display: flex;
   justify-content: flex-end;
 }
@@ -176,12 +176,8 @@
   cursor: pointer;
 }
 
-.clear-button:hover:not(:disabled) {
-  text-decoration: underline;
-}
-
 .clear-button:disabled {
-  color: rgba(27, 27, 111, 0.3);
+  color: #1b1b6f4d;
   cursor: not-allowed;
 }
 

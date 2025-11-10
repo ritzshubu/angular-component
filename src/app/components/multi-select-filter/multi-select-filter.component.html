@@ -17,6 +17,7 @@
     <lucide-icon
       class="trigger-icon"
       name="ChevronDown"
+      size="18"
       aria-hidden="true"
     />
   </button>
@@ -53,9 +54,7 @@
                 type="checkbox"
                 [checked]="isChecked(item)"
                 [indeterminate]="isIndeterminate(item)"
-                [attr.aria-checked]="
-                  isIndeterminate(item) ? 'mixed' : isChecked(item)
-                "
+                [attr.aria-checked]="isIndeterminate(item) ? 'mixed' : isChecked(item)"
                 (click)="$event.stopPropagation(); toggleOption(item)"
               />
               <span class="checkbox-label">{{ item.option.label }}</span>
