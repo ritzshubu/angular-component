@@ -18,11 +18,11 @@
   gap: 0.25rem;
   padding: 8px 12px;
   border-radius: 4px;
-  border: 1px solid #cccfD7;
+  border: 1px solid #f5f5fd;
   background: #fff;
   color: #1b1b6f;
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 400;
   box-shadow: 0 0 3px 0 #0000000d, 0 1px 3px 0 #0000000d, 0 4px 5px 0 #0000000d;
   transition:
     border-color 0.18s ease,
@@ -32,11 +32,11 @@
 
 .filter-trigger:hover {
   background: #f5f5fd;
-  border-color: #1b1b6f;
+  border-color: #f5f5fd;
 }
 
 .filter-trigger.open {
-  border-color: #1b1b6f;
+  border-color: #f5f5fd;
   box-shadow:
     0 0 3px 0 #0000000d,
     0 1px 3px 0 #0000000d,
@@ -140,15 +140,16 @@
 }
 
 .checkbox-label {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #17171c;
-  font-weight: 500;
+  line-height: 24px;
+  font-weight: 400;
 }
 
 .option-count {
   font-size: 0.85rem;
   color: #1b1b6f;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .empty-state {
@@ -159,9 +160,8 @@
 }
 
 .dropdown-footer {
-  margin-top: 0.5rem;
   padding: 8px 12px;
-  border-top: 1px solid #cccfd799;
+  border-top: 1px solid #e2e4e9;
   display: flex;
   justify-content: flex-end;
 }
