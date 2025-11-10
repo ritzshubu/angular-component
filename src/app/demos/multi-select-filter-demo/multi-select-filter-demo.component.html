@@ -1,0 +1,96 @@
+<section class="demo">
+  <header class="demo-header">
+    <h2>Multi-select Filter</h2>
+    <p>
+      Combine checkbox filters with optional hierarchy, selection counts, and responsive layout. This component keeps your filter state in sync with button text, offers a one-click “all selected” toggle, and emits the list of selected leaf values.
+    </p>
+  </header>
+  
+  <div class="filter-grid">
+    <article class="filter-card">
+      <h3>Business type</h3>
+      <p class="card-hint">
+        Tree-structured filter with initial all-selected state and dropdown counts.
+      </p>
+
+      <ui-multi-select-filter
+        [options]="businessFilters"
+        placeholder="Business Type"
+        [showDropdownCount]="true"
+        [showFilterCount]="true"
+        [showAllSelected]="true"
+        [initialSelection]="true"
+        (selectionChange)="onBusinessFilterChange($event)"
+      />
+
+      <p class="selection-label">
+        Selected:
+        <span>{{ formattedBusinessSelection(businessSelection()) }}</span>
+      </p>
+    </article>
+
+    <article class="filter-card">
+      <h3>Feature tags</h3>
+      <p class="card-hint">
+        Flat list example with counts and responsive trigger sizing.
+      </p>
+      <ui-multi-select-filter
+        [options]="featureFilters"
+        placeholder="Feature Tags"
+        [showDropdownCount]="true"
+        [showFilterCount]="true"
+        [showAllSelected]="false"
+        (selectionChange)="onFeatureFilterChange($event)"
+      />
+      <p class="selection-label">
+        Selected:
+        <span>{{ formattedFeatureSelection(featureSelection()) }}</span>
+      </p>
+    </article>
+  </div>
+  <section class="demo-overview">
+    <h3>Why use it?</h3>
+    <ul class="overview-list">
+      <li>Built with standalone Angular signals – no extra state management required.</li>
+      <li>Supports flat lists or parent/child trees with automatic indeterminate states.</li>
+      <li>Responsive trigger widths: the button grows to match the widest option label.</li>
+      <li>Customisable counts and selection summaries via <code>showDropdownCount</code> and <code>showFilterCount</code>.</li>
+      <li>Clear action instantly resets the selection, keeping events in sync.</li>
+    </ul>
+  </section>
+  <section class="demo-flags">
+    <h3>Key Inputs</h3>
+    <dl>
+      <div>
+        <dt><code>options</code></dt>
+        <dd>Array of <code>&#123; label, value, count?, children? &#125;</code> objects. Children turn the dropdown into a tree.</dd>
+      </div>
+      <div>
+        <dt><code>showDropdownCount</code></dt>
+        <dd>Shows per-option occurrence counts when <code>true</code>.</dd>
+      </div>
+      <div>
+        <dt><code>showFilterCount</code></dt>
+        <dd>Condenses the trigger label to “First option + n” after multiple selections.</dd>
+      </div>
+      <div>
+        <dt><code>showAllSelected</code></dt>
+        <dd>Toggles the top “All Selected” row. Disable for standalone flat lists.</dd>
+      </div>
+      <div>
+        <dt><code>initialSelection</code></dt>
+        <dd>Boolean flag to pre-select every option on mount.</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="demo-tips">
+    <h3>Implementation Tips</h3>
+    <ul class="tips-list">
+      <li>Use <code>selectionChange</code> to persist state to URLs or API calls—values are always the leaf node identifiers.</li>
+      <li>When working with large datasets, compute counts server-side and pass them via the <code>count</code> field.</li>
+      <li>Combine with top-level <code>showFilterCount</code> to keep the trigger concise in tight layouts.</li>
+      <li>Disable <code>showAllSelected</code> for simple tag pickers where an “All” option isn’t meaningful.</li>
+    </ul>
+  </section>
+</section>

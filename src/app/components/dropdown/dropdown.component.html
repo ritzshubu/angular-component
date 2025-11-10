@@ -1,0 +1,69 @@
+<div class="dropdown" data-dropdown-root>
+  <button
+    class="dropdown-trigger"
+    type="button"
+    [class.open]="isOpen()"
+    [attr.aria-expanded]="isOpen()"
+    aria-haspopup="listbox"
+    [attr.aria-disabled]="disabled || null"
+    (click)="toggle()"
+    (keydown)="onTriggerKeydown($event)"
+  >
+    <span
+      class="dropdown-label"
+      [class.placeholder]="!selectedOption()"
+    >
+      {{ selectedOption()?.label ?? placeholder }}
+    </span>
+    <lucide-icon
+      class="dropdown-icon"
+      name="ChevronDown"
+      aria-hidden="true"
+    />
+  </button>
+
+  <div
+    class="dropdown-panel"
+    *ngIf="isOpen()"
+  >
+    <ul
+      class="dropdown-options"
+      role="listbox"
+      tabindex="-1"
+      (keydown)="onListKeydown($event)"
+      [attr.aria-activedescendant]="
+        activeIndex() >= 0
+          ? 'dropdown-option-' + availableOptions()[activeIndex()].value
+          : null
+      "
+    >
+      @for (option of availableOptions(); track option.value; let index = $index) {
+        <li
+          class="dropdown-option"
+          role="option"
+          [id]="'dropdown-option-' + option.value"
+          [class.selected]="isSelected(option)"
+          [class.active]="isActive(index)"
+          [class.disabled]="option.disabled"
+          [attr.aria-selected]="isSelected(option)"
+          (click)="select(option)"
+          (mouseenter)="onOptionHover(index)"
+        >
+          <span class="option-label">
+            {{ option.label }}
+          </span>
+          <span class="option-hint" *ngIf="option.hint">
+            {{ option.hint }}
+          </span>
+        </li>
+      } @empty {
+        <li
+          class="dropdown-empty"
+          aria-disabled="true"
+        >
+          No options available
+        </li>
+      }
+    </ul>
+  </div>
+</div>

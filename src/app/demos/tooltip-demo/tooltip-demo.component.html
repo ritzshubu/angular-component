@@ -1,0 +1,50 @@
+<section class="demo">
+  <header class="demo-header">
+    <h2>Tooltip</h2>
+    <p>
+      Wrap any interactive element with
+      <code>&lt;ui-tooltip&gt;</code>
+      to add contextual guidance that works with mouse, keyboard, and touch
+      interactions.
+    </p>
+  </header>
+
+  <div class="preview">
+    @for (example of examples; track example.label) {
+      <ui-tooltip
+        class="preview-item"
+        [text]="example.text"
+        [direction]="example.direction"
+      >
+        <button type="button" class="demo-button">
+          {{ example.label }}
+        </button>
+      </ui-tooltip>
+    }
+  </div>
+  <section class="api">
+    <h3>Inputs</h3>
+    <div class="api-table">
+      <div class="api-header">
+        <span>Input</span>
+        <span>Type</span>
+        <span>Default</span>
+        <span>Description</span>
+      </div>
+
+      @for (input of inputs; track input.name) {
+        <div class="api-row">
+          <span>{{ input.name }}</span>
+          <span><code>{{ input.type }}</code></span>
+          <span>{{ input.defaultValue }}</span>
+          <span>{{ input.description }}</span>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="usage">
+    <h3>Usage</h3>
+    <pre><code>{{ usageExample }}</code></pre>
+  </section>
+</section>

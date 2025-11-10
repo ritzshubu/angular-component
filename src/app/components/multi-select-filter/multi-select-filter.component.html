@@ -1,0 +1,87 @@
+<div class="filter-container" data-multi-select-filter-root>
+  <button
+    type="button"
+    class="filter-trigger"
+    [class.open]="isOpen()"
+    (click)="toggleDropdown()"
+    [style.width.px]="buttonWidth()"
+    aria-haspopup="listbox"
+    [attr.aria-expanded]="isOpen()"
+  >
+    <span
+      class="trigger-label"
+      [class.placeholder]="buttonLabel().muted"
+    >
+      {{ buttonLabel().text }}
+    </span>
+    <lucide-icon
+      class="trigger-icon"
+      name="ChevronDown"
+      aria-hidden="true"
+    />
+  </button>
+
+  @if (isOpen()) {
+    <div
+      class="filter-dropdown"
+      [style.width.px]="buttonWidth()"
+    >
+      @if (showAllSelectedRow()) {
+        <div class="dropdown-header">
+          <label class="checkbox-row" (click)="toggleAll()">
+            <input
+              type="checkbox"
+              [checked]="isAllSelected()"
+              [indeterminate]="isPartiallySelected()"
+              [attr.aria-checked]="isPartiallySelected() ? 'mixed' : isAllSelected()"
+              (click)="$event.stopPropagation()"
+            />
+            <span class="checkbox-label">All Selected</span>
+          </label>
+        </div>
+      }
+
+      <div class="dropdown-options">
+        @for (item of flattenedOptions(); track item.option.value) {
+          <div
+            class="option-row"
+            [style.paddingLeft.px]="optionPadding(item)"
+            (click)="toggleOption(item)"
+          >
+            <label class="checkbox-row">
+              <input
+                type="checkbox"
+                [checked]="isChecked(item)"
+                [indeterminate]="isIndeterminate(item)"
+                [attr.aria-checked]="
+                  isIndeterminate(item) ? 'mixed' : isChecked(item)
+                "
+                (click)="$event.stopPropagation(); toggleOption(item)"
+              />
+              <span class="checkbox-label">{{ item.option.label }}</span>
+            </label>
+
+            @if (dropdownCountEnabled() && item.option.count !== undefined) {
+              <span class="option-count">{{ item.option.count }}</span>
+            }
+          </div>
+        } @empty {
+          <div class="empty-state">
+            No options available
+          </div>
+        }
+      </div>
+
+      <div class="dropdown-footer">
+        <button
+          type="button"
+          class="clear-button"
+          (click)="clearSelection()"
+          [disabled]="selectedLeaves().size === 0"
+        >
+          Clear
+        </button>
+      </div>
+    </div>
+  }
+</div>

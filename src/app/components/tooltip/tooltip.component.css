@@ -1,0 +1,141 @@
+
+:host {
+  display: inline-block;
+  font: inherit;
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
+  cursor: default;
+}
+
+.tooltip-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 0;
+}
+
+.tooltip-bubble {
+  position: absolute;
+  z-index: 20;
+  padding: 0.55rem 0.95rem;
+  border-radius: 0.75rem;
+  background: rgba(28, 28, 28, 0.92);
+  color: #ffffff;
+  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.18);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: center;
+  min-width: clamp(220px, calc(100% + 1.5rem), 340px);
+  max-width: min(340px, 88vw);
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(0, 0.35rem, 0);
+  transition:
+    opacity 140ms ease,
+    transform 140ms ease;
+}
+
+.tooltip-bubble::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.tooltip-bubble.visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  pointer-events: auto;
+}
+
+.tooltip-top {
+  bottom: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translate3d(-50%, 0.35rem, 0);
+}
+
+.tooltip-top.visible {
+  transform: translate3d(-50%, 0, 0);
+}
+
+.tooltip-top::after {
+  top: 100%;
+  left: 50%;
+  border-width: 0.4rem 0.4rem 0 0.4rem;
+  border-color: rgba(28, 28, 28, 0.92) transparent transparent transparent;
+  transform: translateX(-50%);
+}
+
+.tooltip-right {
+  top: 50%;
+  left: calc(100% + 0.5rem);
+  transform: translate3d(-0.35rem, -50%, 0);
+}
+
+.tooltip-right.visible {
+  transform: translate3d(0, -50%, 0);
+}
+
+.tooltip-right::after {
+  left: -0.4rem;
+  top: 50%;
+  border-width: 0.4rem 0.4rem 0.4rem 0;
+  border-color: transparent rgba(28, 28, 28, 0.92) transparent transparent;
+  transform: translateY(-50%);
+}
+
+.tooltip-bottom {
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translate3d(-50%, -0.35rem, 0);
+}
+
+.tooltip-bottom.visible {
+  transform: translate3d(-50%, 0, 0);
+}
+
+.tooltip-bottom::after {
+  bottom: 100%;
+  left: 50%;
+  border-width: 0 0.4rem 0.4rem 0.4rem;
+  border-color: transparent transparent rgba(28, 28, 28, 0.92) transparent;
+  transform: translateX(-50%);
+}
+
+.tooltip-left {
+  top: 50%;
+  right: calc(100% + 0.5rem);
+  transform: translate3d(0.35rem, -50%, 0);
+}
+
+.tooltip-left.visible {
+  transform: translate3d(0, -50%, 0);
+}
+
+.tooltip-left::after {
+  right: -0.4rem;
+  top: 50%;
+  border-width: 0.4rem 0 0.4rem 0.4rem;
+  border-color: transparent transparent transparent rgba(28, 28, 28, 0.92);
+  transform: translateY(-50%);
+}
+
+@media (hover: none) {
+  .tooltip-container {
+    cursor: pointer;
+  }
+
+  .tooltip-bubble {
+    font-size: 1rem;
+  }
+}
+

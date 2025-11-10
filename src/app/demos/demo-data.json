@@ -1,0 +1,41 @@
+{
+  "businessFilters": [
+    {
+      "label": "Enterprise",
+      "value": "enterprise",
+      "count": 24,
+      "children": [
+        { "label": "Finance", "value": "enterprise-finance", "count": 8 },
+        { "label": "Healthcare", "value": "enterprise-healthcare", "count": 6 },
+        { "label": "Retail", "value": "enterprise-retail", "count": 10 }
+      ]
+    },
+    {
+      "label": "Growth",
+      "value": "growth",
+      "count": 18,
+      "children": [
+        { "label": "Startups", "value": "growth-startups", "count": 9 },
+        { "label": "Scale ups", "value": "growth-scale", "count": 6 },
+        { "label": "SMB", "value": "growth-smb", "count": 3 }
+      ]
+    },
+    {
+      "label": "Non-profit",
+      "value": "non-profit",
+      "count": 9,
+      "children": [
+        { "label": "Education", "value": "non-profit-education", "count": 4 },
+        { "label": "Community", "value": "non-profit-community", "count": 5 }
+      ]
+    }
+  ],
+  "featureFilters": [
+    { "label": "Analytics", "value": "analytics", "count": 12 },
+    { "label": "Collaboration", "value": "collaboration", "count": 7 },
+    { "label": "Integrations", "value": "integrations", "count": 11 },
+    { "label": "Security", "value": "security", "count": 6 },
+    { "label": "Automation", "value": "automation", "count": 5 }
+  ]
+}
+

@@ -1,0 +1,117 @@
+<section class="demo">
+  <header class="demo-header">
+    <h2>Dropdown</h2>
+    <p>
+      Compose accessible select menus with keyboard navigation, disabled options, and custom hints using
+      <code>&lt;ui-dropdown&gt;</code>.
+    </p>
+  </header>
+
+  <div class="preview-grid">
+    <article class="preview-card">
+      <div class="card-heading">
+        <span class="card-title">Publish status</span>
+        <span class="card-subtitle">
+          Active: {{ displaySelectedStatus() }}
+        </span>
+      </div>
+
+      <ui-dropdown
+        [options]="statusOptions"
+        placeholder="Select publication state"
+        [selected]="selectedStatus()"
+        (selectionChange)="onStatusChange($event)"
+      />
+    </article>
+
+    <article class="preview-card">
+      <div class="card-heading">
+        <span class="card-title">Handoff team</span>
+        <span class="card-subtitle">
+          Active: {{ displaySelectedTeam() }}
+        </span>
+      </div>
+
+      <ui-dropdown
+        [options]="flatHandoffOptions()"
+        placeholder="Assign team to handoff"
+        [selected]="selectedTeam()"
+        (selectionChange)="onTeamChange($event)"
+      />
+
+      <ul class="group-legend">
+        @for (group of handoffGroups; track group.title) {
+          <li>
+            <span class="dot"></span>
+            <span>{{ group.title }}</span>
+          </li>
+        }
+        <li class="legend-note">
+          Disabled slots visually indicate full capacity.
+        </li>
+      </ul>
+    </article>
+  </div>
+
+  <section class="api">
+    <h3>Inputs</h3>
+    <div class="api-table">
+      <div class="api-header">
+        <span>Input</span>
+        <span>Type</span>
+        <span>Default</span>
+        <span>Description</span>
+      </div>
+
+      <div class="api-row">
+        <span>options</span>
+        <span><code>DropdownOption[]</code></span>
+        <span>[]</span>
+        <span>List of dropdown options with labels, values, and optional hints.</span>
+      </div>
+
+      <div class="api-row">
+        <span>placeholder</span>
+        <span><code>string</code></span>
+        <span>"Select an option"</span>
+        <span>Text shown before a selection is made.</span>
+      </div>
+
+      <div class="api-row">
+        <span>selected</span>
+        <span><code>string | null</code></span>
+        <span>null</span>
+        <span>Value of the currently selected option.</span>
+      </div>
+
+      <div class="api-row">
+        <span>disabled</span>
+        <span><code>boolean</code></span>
+        <span>false</span>
+        <span>Disables user interaction with the dropdown trigger.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="api">
+    <h3>Outputs</h3>
+    <div class="api-table">
+      <div class="api-header">
+        <span>Output</span>
+        <span>Type</span>
+        <span>Description</span>
+      </div>
+
+      <div class="api-row">
+        <span>selectionChange</span>
+        <span><code>EventEmitter&lt;DropdownOption&gt;</code></span>
+        <span>Emits the selected option when a user chooses a new value.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="usage">
+    <h3>Usage</h3>
+    <pre><code>{{ usageSnippet }}</code></pre>
+  </section>
+</section>

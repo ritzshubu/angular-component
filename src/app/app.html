@@ -1,0 +1,51 @@
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <lucide-icon
+        class="brand-icon"
+        name="Sparkles"
+        aria-hidden="true"
+      />
+      <span class="brand-title">Component Docs</span>
+    </div>
+
+    <label class="search" aria-label="Search components">
+      <span class="visually-hidden">Search components</span>
+      <lucide-icon class="search-icon" name="Search" aria-hidden="true" />
+      <input
+        type="search"
+        placeholder="Search components"
+        #searchBox
+        [value]="searchTerm()"
+        (input)="onSearch(searchBox.value)"
+      />
+    </label>
+
+    <nav class="nav" aria-label="Component navigation">
+      @for (component of filteredComponents(); track component.name) {
+        <a
+          class="nav-item"
+          [routerLink]="component.path"
+          routerLinkActive="active"
+        >
+          <lucide-icon
+            class="nav-icon"
+            [name]="component.icon"
+            aria-hidden="true"
+          />
+          <span class="nav-title">{{ component.name }}</span>
+        </a>
+      } @empty {
+        <p class="empty-state">
+          No components match your search.
+        </p>
+      }
+    </nav>
+  </aside>
+
+  <main class="content">
+    <section class="content-body">
+      <router-outlet />
+    </section>
+  </main>
+</div>

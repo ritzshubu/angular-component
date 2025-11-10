@@ -1,0 +1,26 @@
+<div
+  class="tooltip-container"
+  (mouseenter)="show()"
+  (mouseleave)="hide()"
+  (focusin)="show()"
+  (focusout)="hide()"
+  (touchstart)="toggleForTouch()"
+>
+  <span class="tooltip-trigger" [attr.aria-describedby]="tooltipId">
+    <ng-content></ng-content>
+  </span>
+
+  <div
+    class="tooltip-bubble"
+    role="tooltip"
+    [id]="tooltipId"
+    [class.visible]="isVisible()"
+    [class.tooltip-top]="direction === 'top'"
+    [class.tooltip-right]="direction === 'right'"
+    [class.tooltip-bottom]="direction === 'bottom'"
+    [class.tooltip-left]="direction === 'left'"
+    [attr.aria-hidden]="!isVisible()"
+  >
+    {{ text }}
+  </div>
+</div>
